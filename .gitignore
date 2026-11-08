@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.vscode/
+evals/results/
+# Evals and race goal built from my real data: never published.
+evals/cases.real.json
+data/goal.json
+.DS_Store
+.logfire/
+logs/

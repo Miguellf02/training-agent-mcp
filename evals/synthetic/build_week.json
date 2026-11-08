@@ -1,0 +1,149 @@
+{
+ "_meta": "SYNTHETIC data, invented for a normal build week. Not real runs. Weeks 2026-W27..W30: 30, 32, 33, 35 km, with heart rate.",
+ "activities": [
+  {
+   "id": "syn-001",
+   "start_date_local": "2026-06-30T08:00:00",
+   "type": "Run",
+   "name": "Easy run",
+   "distance": 6000,
+   "moving_time": 2070,
+   "average_heartrate": 142
+  },
+  {
+   "id": "syn-002",
+   "start_date_local": "2026-07-02T08:00:00",
+   "type": "Run",
+   "name": "Steady run",
+   "distance": 7000,
+   "moving_time": 2415,
+   "average_heartrate": 150
+  },
+  {
+   "id": "syn-003",
+   "start_date_local": "2026-07-04T08:00:00",
+   "type": "Run",
+   "name": "Recovery run",
+   "distance": 5000,
+   "moving_time": 1725,
+   "average_heartrate": 138
+  },
+  {
+   "id": "syn-004",
+   "start_date_local": "2026-07-05T08:00:00",
+   "type": "Run",
+   "name": "Long run",
+   "distance": 12000,
+   "moving_time": 4140,
+   "average_heartrate": 146
+  },
+  {
+   "id": "syn-005",
+   "start_date_local": "2026-07-07T08:00:00",
+   "type": "Run",
+   "name": "Easy run",
+   "distance": 7000,
+   "moving_time": 2415,
+   "average_heartrate": 143
+  },
+  {
+   "id": "syn-006",
+   "start_date_local": "2026-07-09T08:00:00",
+   "type": "Run",
+   "name": "Steady run",
+   "distance": 7000,
+   "moving_time": 2415,
+   "average_heartrate": 151
+  },
+  {
+   "id": "syn-007",
+   "start_date_local": "2026-07-11T08:00:00",
+   "type": "Run",
+   "name": "Recovery run",
+   "distance": 5000,
+   "moving_time": 1725,
+   "average_heartrate": 139
+  },
+  {
+   "id": "syn-008",
+   "start_date_local": "2026-07-12T08:00:00",
+   "type": "Run",
+   "name": "Long run",
+   "distance": 13000,
+   "moving_time": 4485,
+   "average_heartrate": 147
+  },
+  {
+   "id": "syn-009",
+   "start_date_local": "2026-07-14T08:00:00",
+   "type": "Run",
+   "name": "Easy run",
+   "distance": 7000,
+   "moving_time": 2415,
+   "average_heartrate": 142
+  },
+  {
+   "id": "syn-010",
+   "start_date_local": "2026-07-16T08:00:00",
+   "type": "Run",
+   "name": "Steady run",
+   "distance": 8000,
+   "moving_time": 2760,
+   "average_heartrate": 150
+  },
+  {
+   "id": "syn-011",
+   "start_date_local": "2026-07-18T08:00:00",
+   "type": "Run",
+   "name": "Recovery run",
+   "distance": 5000,
+   "moving_time": 1725,
+   "average_heartrate": 138
+  },
+  {
+   "id": "syn-012",
+   "start_date_local": "2026-07-19T08:00:00",
+   "type": "Run",
+   "name": "Long run",
+   "distance": 13000,
+   "moving_time": 4485,
+   "average_heartrate": 146
+  },
+  {
+   "id": "syn-013",
+   "start_date_local": "2026-07-21T08:00:00",
+   "type": "Run",
+   "name": "Easy run",
+   "distance": 7000,
+   "moving_time": 2415,
+   "average_heartrate": 141
+  },
+  {
+   "id": "syn-014",
+   "start_date_local": "2026-07-23T08:00:00",
+   "type": "Run",
+   "name": "Steady run",
+   "distance": 8000,
+   "moving_time": 2760,
+   "average_heartrate": 149
+  },
+  {
+   "id": "syn-015",
+   "start_date_local": "2026-07-25T08:00:00",
+   "type": "Run",
+   "name": "Recovery run",
+   "distance": 6000,
+   "moving_time": 2070,
+   "average_heartrate": 137
+  },
+  {
+   "id": "syn-016",
+   "start_date_local": "2026-07-26T08:00:00",
+   "type": "Run",
+   "name": "Long run",
+   "distance": 14000,
+   "moving_time": 4830,
+   "average_heartrate": 147
+  }
+ ]
+}

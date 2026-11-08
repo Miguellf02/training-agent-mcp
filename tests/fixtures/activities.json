@@ -1,0 +1,59 @@
+{
+ "_meta": "Invented data for the tests. Not real runs.",
+ "activities": [
+  {
+   "id": "t1",
+   "start_date_local": "2026-09-15T08:00:00",
+   "type": "Run",
+   "name": "Evening run",
+   "distance": 4000,
+   "moving_time": 1320,
+   "average_heartrate": null
+  },
+  {
+   "id": "t2",
+   "start_date_local": "2026-09-17T08:00:00",
+   "type": "Run",
+   "name": "Night run",
+   "distance": 5000,
+   "moving_time": 1620,
+   "average_heartrate": null
+  },
+  {
+   "id": "t3",
+   "start_date_local": "2026-09-22T08:00:00",
+   "type": "Run",
+   "name": "Tempo run",
+   "distance": 10000,
+   "moving_time": 3120,
+   "average_heartrate": null
+  },
+  {
+   "id": "t4",
+   "start_date_local": "2026-09-29T08:00:00",
+   "type": "Run",
+   "name": "Easy run",
+   "distance": 3000,
+   "moving_time": 960,
+   "average_heartrate": null
+  },
+  {
+   "id": "t5",
+   "start_date_local": "2026-10-13T08:00:00",
+   "type": "Run",
+   "name": "Shakeout",
+   "distance": 3000,
+   "moving_time": 960,
+   "average_heartrate": null
+  },
+  {
+   "id": "t6",
+   "start_date_local": "2026-10-17T08:00:00",
+   "type": "Run",
+   "name": "Sample City Half Marathon",
+   "distance": 20000,
+   "moving_time": 6000,
+   "average_heartrate": null
+  }
+ ]
+}

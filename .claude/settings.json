@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "mcp__coach__get_weekly_load",
+      "mcp__coach__get_activities"
+    ],
+    "deny": [
+      "Read(./.env)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__coach__get_activities",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv",
+            "args": [
+              "run",
+              "--project",
+              "${CLAUDE_PROJECT_DIR}",
+              "python",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/limit_activity_range.py"
+            ],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv",
+            "args": [
+              "run",
+              "--project",
+              "${CLAUDE_PROJECT_DIR}",
+              "python",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/check_python.py"
+            ],
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

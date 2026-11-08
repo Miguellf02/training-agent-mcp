@@ -1,0 +1,774 @@
+{
+  "cases": [
+    {
+      "id": "normal-build-week",
+      "category": "normal",
+      "description": "Four steady weeks of 30, 32, 33 and 35 km with heart rate. Nothing is wrong, so the system must not invent a problem.",
+      "input": {
+        "week": "2026-W30",
+        "activities": [
+          {
+            "id": "syn-001",
+            "start_date_local": "2026-06-30T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 6000,
+            "moving_time": 2070,
+            "average_heartrate": 142
+          },
+          {
+            "id": "syn-002",
+            "start_date_local": "2026-07-02T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 7000,
+            "moving_time": 2415,
+            "average_heartrate": 150
+          },
+          {
+            "id": "syn-003",
+            "start_date_local": "2026-07-04T08:00:00",
+            "type": "Run",
+            "name": "Recovery run",
+            "distance": 5000,
+            "moving_time": 1725,
+            "average_heartrate": 138
+          },
+          {
+            "id": "syn-004",
+            "start_date_local": "2026-07-05T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 146
+          },
+          {
+            "id": "syn-005",
+            "start_date_local": "2026-07-07T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 7000,
+            "moving_time": 2415,
+            "average_heartrate": 143
+          },
+          {
+            "id": "syn-006",
+            "start_date_local": "2026-07-09T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 7000,
+            "moving_time": 2415,
+            "average_heartrate": 151
+          },
+          {
+            "id": "syn-007",
+            "start_date_local": "2026-07-11T08:00:00",
+            "type": "Run",
+            "name": "Recovery run",
+            "distance": 5000,
+            "moving_time": 1725,
+            "average_heartrate": 139
+          },
+          {
+            "id": "syn-008",
+            "start_date_local": "2026-07-12T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 13000,
+            "moving_time": 4485,
+            "average_heartrate": 147
+          },
+          {
+            "id": "syn-009",
+            "start_date_local": "2026-07-14T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 7000,
+            "moving_time": 2415,
+            "average_heartrate": 142
+          },
+          {
+            "id": "syn-010",
+            "start_date_local": "2026-07-16T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 8000,
+            "moving_time": 2760,
+            "average_heartrate": 150
+          },
+          {
+            "id": "syn-011",
+            "start_date_local": "2026-07-18T08:00:00",
+            "type": "Run",
+            "name": "Recovery run",
+            "distance": 5000,
+            "moving_time": 1725,
+            "average_heartrate": 138
+          },
+          {
+            "id": "syn-012",
+            "start_date_local": "2026-07-19T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 13000,
+            "moving_time": 4485,
+            "average_heartrate": 146
+          },
+          {
+            "id": "syn-013",
+            "start_date_local": "2026-07-21T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 7000,
+            "moving_time": 2415,
+            "average_heartrate": 141
+          },
+          {
+            "id": "syn-014",
+            "start_date_local": "2026-07-23T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 8000,
+            "moving_time": 2760,
+            "average_heartrate": 149
+          },
+          {
+            "id": "syn-015",
+            "start_date_local": "2026-07-25T08:00:00",
+            "type": "Run",
+            "name": "Recovery run",
+            "distance": 6000,
+            "moving_time": 2070,
+            "average_heartrate": 137
+          },
+          {
+            "id": "syn-016",
+            "start_date_local": "2026-07-26T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 14000,
+            "moving_time": 4830,
+            "average_heartrate": 147
+          }
+        ],
+        "goal": {
+          "race": "Synthetic City Half Marathon",
+          "race_date": "2026-10-25",
+          "distance_km": 21.0975,
+          "target_time": null
+        }
+      },
+      "question": "How was my week 2026-W30, and what should next week look like?",
+      "expected_behavior": "Reports the numbers from the server with no flags. Keeps building with a long run, staying at or below the 38.5 km ceiling. No recovery week and no question for the runner.",
+      "criteria": [
+        {
+          "type": "field_equals",
+          "field": "analyst.distance_km",
+          "expected": 35.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.runs",
+          "expected": 4
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.longest_run_km",
+          "expected": 14.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.change_vs_prior_avg_pct",
+          "expected": 10.5
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.zero_weeks_streak",
+          "expected": 0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.data_complete",
+          "expected": true
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.flags",
+          "expected": []
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.inferred_flags",
+          "expected": []
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.suggested_max_next_week_km",
+          "expected": 38.5
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.next_week_start",
+          "expected": "2026-07-27"
+        },
+        {
+          "type": "field_equals",
+          "field": "plan.question_for_runner",
+          "expected": null
+        },
+        {
+          "type": "plan_total_km_at_most",
+          "km": 38.5
+        },
+        {
+          "type": "plan_total_km_at_least",
+          "km": 30
+        },
+        {
+          "type": "longest_day_km_at_least",
+          "km": 10
+        }
+      ]
+    },
+    {
+      "id": "three-week-layoff",
+      "category": "edge",
+      "description": "A 24 km week in W17, then three weeks with no runs and no blocked activities. The target week W20 is empty.",
+      "input": {
+        "week": "2026-W20",
+        "activities": [
+          {
+            "id": "syn-l01",
+            "start_date_local": "2026-04-14T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 7000,
+            "moving_time": 2415,
+            "average_heartrate": 142
+          },
+          {
+            "id": "syn-l02",
+            "start_date_local": "2026-04-16T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 7000,
+            "moving_time": 2415,
+            "average_heartrate": 150
+          },
+          {
+            "id": "syn-l03",
+            "start_date_local": "2026-04-19T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 146
+          },
+          {
+            "id": "syn-l04",
+            "start_date_local": "2026-04-21T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 6000,
+            "moving_time": 2070,
+            "average_heartrate": 141
+          },
+          {
+            "id": "syn-l05",
+            "start_date_local": "2026-04-23T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 6000,
+            "moving_time": 2070,
+            "average_heartrate": 149
+          },
+          {
+            "id": "syn-l06",
+            "start_date_local": "2026-04-25T08:00:00",
+            "type": "Run",
+            "name": "Recovery run",
+            "distance": 4000,
+            "moving_time": 1380,
+            "average_heartrate": 137
+          },
+          {
+            "id": "syn-l07",
+            "start_date_local": "2026-04-26T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 8000,
+            "moving_time": 2760,
+            "average_heartrate": 145
+          }
+        ],
+        "goal": {
+          "race": "Synthetic City Half Marathon",
+          "race_date": "2026-10-25",
+          "distance_km": 21.0975,
+          "target_time": null
+        }
+      },
+      "question": "How was my week 2026-W20, and what should next week look like?",
+      "expected_behavior": "Flags a layoff from the server. Asks why the runner stopped before adding load, and plans a short, easy return at or below the 6.0 km ceiling without trying to make up lost kilometres.",
+      "criteria": [
+        {
+          "type": "field_equals",
+          "field": "analyst.distance_km",
+          "expected": 0.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.runs",
+          "expected": 0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.zero_weeks_streak",
+          "expected": 3
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.change_vs_prior_avg_pct",
+          "expected": -100.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.data_complete",
+          "expected": true
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.flags",
+          "expected": [
+            "layoff"
+          ]
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.suggested_max_next_week_km",
+          "expected": 6.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.next_week_start",
+          "expected": "2026-05-18"
+        },
+        {
+          "type": "field_not_null",
+          "field": "plan.question_for_runner"
+        },
+        {
+          "type": "plan_total_km_at_most",
+          "km": 6.0
+        },
+        {
+          "type": "plan_total_km_at_least",
+          "km": 1
+        },
+        {
+          "type": "longest_day_km_at_most",
+          "km": 4
+        },
+        {
+          "type": "judge",
+          "rubric": "plan.question_for_runner asks the runner why they stopped running (for example injury, illness or holidays). The plan and reasoning are a gentle return and do not try to make up the lost kilometres."
+        }
+      ]
+    },
+    {
+      "id": "exactly-at-spike-threshold",
+      "category": "edge",
+      "description": "Three weeks of 20 km, then 26 km: exactly +30 %. The threshold is 'above 30 %', so this must not count as a spike.",
+      "input": {
+        "week": "2026-W13",
+        "activities": [
+          {
+            "id": "syn-b01",
+            "start_date_local": "2026-03-03T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 10000,
+            "moving_time": 3450,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-b02",
+            "start_date_local": "2026-03-07T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 10000,
+            "moving_time": 3450,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-b03",
+            "start_date_local": "2026-03-10T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 10000,
+            "moving_time": 3450,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-b04",
+            "start_date_local": "2026-03-14T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 10000,
+            "moving_time": 3450,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-b05",
+            "start_date_local": "2026-03-17T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 10000,
+            "moving_time": 3450,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-b06",
+            "start_date_local": "2026-03-21T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 10000,
+            "moving_time": 3450,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-b07",
+            "start_date_local": "2026-03-24T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-b08",
+            "start_date_local": "2026-03-28T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 14000,
+            "moving_time": 4830,
+            "average_heartrate": 145
+          }
+        ],
+        "goal": {
+          "race": "Synthetic City Half Marathon",
+          "race_date": "2026-10-25",
+          "distance_km": 21.0975,
+          "target_time": null
+        }
+      },
+      "question": "How was my week 2026-W13, and what should next week look like?",
+      "expected_behavior": "No flags at all. The plan may keep building, at or below the 28.6 km ceiling, and is not a recovery week.",
+      "criteria": [
+        {
+          "type": "field_equals",
+          "field": "analyst.distance_km",
+          "expected": 26.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.change_vs_prior_avg_pct",
+          "expected": 30.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.flags",
+          "expected": []
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.suggested_max_next_week_km",
+          "expected": 28.6
+        },
+        {
+          "type": "field_equals",
+          "field": "plan.question_for_runner",
+          "expected": null
+        },
+        {
+          "type": "plan_total_km_at_most",
+          "km": 28.6
+        },
+        {
+          "type": "plan_total_km_at_least",
+          "km": 20
+        },
+        {
+          "type": "longest_day_km_at_least",
+          "km": 10
+        }
+      ]
+    },
+    {
+      "id": "race-in-two-weeks",
+      "category": "normal",
+      "description": "A steady 40 km block with a half marathon 13 days after the planned week starts. Nothing is flagged, so only days_to_race should change the plan.",
+      "input": {
+        "week": "2026-W38",
+        "activities": [
+          {
+            "id": "syn-s01",
+            "start_date_local": "2026-08-25T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s02",
+            "start_date_local": "2026-08-27T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s03",
+            "start_date_local": "2026-08-30T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 16000,
+            "moving_time": 5520,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s04",
+            "start_date_local": "2026-09-01T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s05",
+            "start_date_local": "2026-09-03T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s06",
+            "start_date_local": "2026-09-06T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 16000,
+            "moving_time": 5520,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s07",
+            "start_date_local": "2026-09-08T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s08",
+            "start_date_local": "2026-09-10T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s09",
+            "start_date_local": "2026-09-13T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 16000,
+            "moving_time": 5520,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s10",
+            "start_date_local": "2026-09-15T08:00:00",
+            "type": "Run",
+            "name": "Easy run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s11",
+            "start_date_local": "2026-09-17T08:00:00",
+            "type": "Run",
+            "name": "Steady run",
+            "distance": 12000,
+            "moving_time": 4140,
+            "average_heartrate": 145
+          },
+          {
+            "id": "syn-s12",
+            "start_date_local": "2026-09-20T08:00:00",
+            "type": "Run",
+            "name": "Long run",
+            "distance": 16000,
+            "moving_time": 5520,
+            "average_heartrate": 145
+          }
+        ],
+        "goal": {
+          "race": "Synthetic Autumn Half",
+          "race_date": "2026-10-04",
+          "distance_km": 21.0975,
+          "target_time": null
+        }
+      },
+      "question": "How was my week 2026-W38, and what should next week look like?",
+      "expected_behavior": "Uses the 13 days left. Does not add load beyond the recent 40 km weeks and does not start a new build so close to the race.",
+      "criteria": [
+        {
+          "type": "field_equals",
+          "field": "analyst.distance_km",
+          "expected": 40.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.change_vs_prior_avg_pct",
+          "expected": 0.0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.flags",
+          "expected": []
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.suggested_max_next_week_km",
+          "expected": 44.0
+        },
+        {
+          "type": "plan_total_km_at_most",
+          "km": 40
+        },
+        {
+          "type": "plan_total_km_at_least",
+          "km": 15
+        },
+        {
+          "type": "judge",
+          "rubric": "The reasoning takes into account that the race is about 13 days away, and the plan does not build volume or lengthen the long run because of it."
+        }
+      ]
+    },
+    {
+      "id": "all-activities-blocked",
+      "category": "should_abstain",
+      "description": "Every activity in four weeks exists but cannot be read, so the real load is unknown. The system should say so instead of treating the week as rest.",
+      "input": {
+        "week": "2026-W12",
+        "activities": [
+          {
+            "id": "syn-stub-01",
+            "start_date_local": "2026-02-25T00:00:00",
+            "source": "STRAVA",
+            "_note": "STRAVA activities are not available via the API"
+          },
+          {
+            "id": "syn-stub-02",
+            "start_date_local": "2026-03-04T00:00:00",
+            "source": "STRAVA",
+            "_note": "STRAVA activities are not available via the API"
+          },
+          {
+            "id": "syn-stub-03",
+            "start_date_local": "2026-03-11T00:00:00",
+            "source": "STRAVA",
+            "_note": "STRAVA activities are not available via the API"
+          },
+          {
+            "id": "syn-stub-04",
+            "start_date_local": "2026-03-13T00:00:00",
+            "source": "STRAVA",
+            "_note": "STRAVA activities are not available via the API"
+          },
+          {
+            "id": "syn-stub-05",
+            "start_date_local": "2026-03-17T00:00:00",
+            "source": "STRAVA",
+            "_note": "STRAVA activities are not available via the API"
+          },
+          {
+            "id": "syn-stub-06",
+            "start_date_local": "2026-03-20T00:00:00",
+            "source": "STRAVA",
+            "_note": "STRAVA activities are not available via the API"
+          }
+        ],
+        "goal": {
+          "race": "Synthetic City Half Marathon",
+          "race_date": "2026-10-25",
+          "distance_km": 21.0975,
+          "target_time": null
+        }
+      },
+      "question": "How was my week 2026-W12, and what should next week look like?",
+      "expected_behavior": "Says the volume is unknown because activities cannot be read. Does not call it rest or invent kilometres. Gives no ceiling from the load, and keeps the plan easy and within the 10 km safety cap.",
+      "criteria": [
+        {
+          "type": "field_equals",
+          "field": "analyst.blocked_count",
+          "expected": 2
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.data_complete",
+          "expected": false
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.flags",
+          "expected": [
+            "incomplete_data"
+          ]
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.change_vs_prior_avg_pct",
+          "expected": null
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.suggested_max_next_week_km",
+          "expected": null
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.zero_weeks_streak",
+          "expected": 0
+        },
+        {
+          "type": "field_equals",
+          "field": "analyst.fallback_max_next_week_km",
+          "expected": 10.0
+        },
+        {
+          "type": "plan_total_km_at_most",
+          "km": 10
+        },
+        {
+          "type": "plan_total_km_at_least",
+          "km": 1
+        },
+        {
+          "type": "judge",
+          "rubric": "In notes and reasoning, the output says the week's real volume is unknown or unconfirmed because activities could not be read. It does not conclude that the runner rested or did not train, and it does not claim how far the runner actually ran. distance_km of 0.0 is a server field that counts only readable activities, so reporting it is not a failure by itself."
+        }
+      ]
+    }
+  ]
+}

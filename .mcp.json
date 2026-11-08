@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "coach": {
+      "command": "uv",
+      "args": ["run", "coach-mcp"],
+      "env": {}
+    }
+  }
+}
